@@ -1,210 +1,225 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import HorizontalPager from "./HorizontalPager.astro";
+
+const name = "Your Name";
+const title = "Full‑Stack Developer & Technical Lead";
+const location = "City, Country";
+const email = "you@example.com";
+const summary = `I design, build, and lead scalable web platforms end‑to‑end. My focus is TypeScript across the stack, modern cloud architectures, and pragmatic developer experience.`;
+
+const skillsPrimary = [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "GraphQL",
+    "PostgreSQL",
+];
+const skillsSecondary = [
+    "AWS",
+    "Docker",
+    "CI/CD",
+    "Kubernetes",
+    "Terraform",
+    "Event‑Driven",
+];
+
+const projects = [
+    {
+        name: "Modern Commerce Platform",
+        blurb: "Multi‑tenant headless commerce with real‑time inventory and edge caching.",
+        highlights: ["API‑first", "CQRS", "Stripe", "Edge CDN"],
+        link: "#",
+    },
+    {
+        name: "Analytics Pipeline",
+        blurb: "Streaming analytics from clickstream to dashboard in seconds.",
+        highlights: ["Kafka", "dbt", "Materialized Views"],
+        link: "#",
+    },
+    {
+        name: "Design System & DX",
+        blurb: "Component library + tooling that cut PR cycle time by 35%.",
+        highlights: ["Storybook", "AST tooling", "Performance"],
+        link: "#",
+    },
+];
+
+const experience = [
+    {
+        role: "Technical Lead",
+        org: "Acme Co.",
+        period: "2022 — Present",
+        bullets: [
+            "Led migration to TypeScript monorepo, reducing defects by 40%.",
+            "Shipped platform-scale features across 8 squads with clear APIs and docs.",
+            "Drove SLOs and on‑call playbooks; MTTR improved by 28%.",
+        ],
+    },
+    {
+        role: "Senior Full‑Stack Engineer",
+        org: "Startup XYZ",
+        period: "2019 — 2022",
+        bullets: [
+            "Scaled React/Node platform to 1M MAU with <200ms p95.",
+            "Introduced GraphQL federation; simplified client dev and caching.",
+            "Built CI/CD with preview envs and contract tests.",
+        ],
+    },
+];
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
-			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
-					>
-				</a>
-			</section>
-		</section>
-	</main>
+<HorizontalPager>
+  <div slot="overlay" class="site-header">
+    <div class="site-header-inner">
+      <div class="brand">{name}</div>
+      <nav>
+        <a class="nav-a" href="#home">Home</a>
+        <a class="nav-a" href="#about">About</a>
+        <a class="nav-a" href="#projects">Projects</a>
+        <a class="nav-a" href="#experience">Experience</a>
+        <a class="nav-a" href="#skills">Skills</a>
+        <a class="nav-a" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
 
-	<a href="https://astro.build/blog/astro-5/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 5.0?</h2>
-		<p>
-			From content layers to server islands, click to learn more about the new features and
-			improvements in Astro 5.0
-		</p>
-	</a>
-</div>
+  <section id="home" class="slide bg-white">
+    <div class="container-w h-full grid grid-cols-1 lg:grid-cols-[1fr,0.5fr] gap-12 items-center">
+      <div>
+        <h1 class="mb-4">{title}</h1>
+        <p class="hero-blurb mb-6 max-w-2xl">{summary}</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="pill">{location}</span>
+          <span class="pill pill-accent">Open to consulting</span>
+          <span class="pill pill-accent">Available for hire</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Get in touch</a>
+          <a class="btn btn-secondary" href="/resume.pdf">Download resume</a>
+        </div>
+      </div>
+      <div class="card card-surface hidden lg:block">
+        <h3 class="mb-4">Core Technologies</h3>
+        <div class="flex flex-wrap gap-2 mb-4">
+          {skillsPrimary.map((s) => <span class="pill pill-accent">{s}</span>)}
+        </div>
+        <div class="text-sm text-textSecondary">
+          Architecture grounded in business value, clean TypeScript, and DevOps that keeps teams moving.
+        </div>
+      </div>
+    </div>
+  </section>
 
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+  <section id="about" class="slide">
+    <div class="container-w h-full flex items-center">
+      <div class="grid-2 w-full">
+        <div class="card card-inline">
+          <div class="icon-circle">👨‍💻</div>
+          <div>
+            <h2 class="mb-4">About</h2>
+            <p class="mb-4">I'm {name}, a builder at heart who loves turning ambiguous problems into delightful, scalable software. I lead with clarity, ship with care, and mentor with empathy.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="pill">Craft</span>
+              <span class="pill">Simplicity</span>
+              <span class="pill">Performance</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="mb-4">Core Principles</h3>
+          <ul class="space-y-2 text-sm">
+            <li>• Outcomes over output</li>
+            <li>• APIs as contracts</li>
+            <li>• Fast feedback wins</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+  <section id="projects" class="slide">
+    <div class="container-w h-full flex flex-col justify-center">
+      <h2 class="mb-8">Selected Projects</h2>
+      <div class="grid-3">
+        {projects.map((p, i) => (
+          <a href={p.link} class="card no-underline">
+            <div class="icon-circle mb-4">{i === 0 ? "🛒" : i === 1 ? "📊" : "🎨"}</div>
+            <h3 class="mb-3">{p.name}</h3>
+            <p class="text-textSecondary text-sm mb-4 leading-relaxed">{p.blurb}</p>
+            <div class="flex flex-wrap gap-1">
+              {p.highlights.map((h) => <span class="pill text-xs">{h}</span>)}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+  <section id="experience" class="slide">
+    <div class="container-w h-full flex flex-col justify-center">
+      <h2 class="mb-8">Experience</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {experience.map((e) => (
+          <div class="card card-inline">
+            <div class="icon-circle">💼</div>
+            <div class="flex-1">
+              <h3 class="mb-1">{e.role}</h3>
+              <p class="text-textSecondary text-sm font-medium mb-3">{e.org} • {e.period}</p>
+              <ul class="space-y-1 text-sm">
+                {e.bullets.map((b) => (
+                  <li class="flex items-start text-textSecondary leading-relaxed">
+                    <span class="text-accent mr-2 mt-1 text-xs">•</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+  <section id="skills" class="slide">
+    <div class="container-w h-full flex flex-col justify-center">
+      <h2 class="mb-8">Skills & Technologies</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="mb-4">Primary Technologies</h3>
+          <div class="flex flex-wrap gap-2">
+            {skillsPrimary.map((s) => <span class="pill pill-accent">{s}</span>)}
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="mb-4">Infrastructure & Tools</h3>
+          <div class="flex flex-wrap gap-2">
+            {skillsSecondary.map((s) => <span class="pill">{s}</span>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+  <section id="contact" class="slide">
+    <div class="container-w h-full flex items-center justify-center">
+      <div class="card card-accent text-center w-full max-w-2xl">
+        <h3 class="text-white mb-4">Ready to work together?</h3>
+        <p class="text-white/90 mb-6">I'm always excited to discuss new opportunities and interesting projects.</p>
+        <div class="flex flex-wrap gap-6 justify-center items-center">
+          <a href={`mailto:${email}`} class="text-white hover:text-white/80 transition-colors">{email}</a>
+          <a href="#" class="text-white hover:text-white/80 transition-colors">LinkedIn</a>
+          <a href="#" class="text-white hover:text-white/80 transition-colors">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
-
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
-
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
-
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
-
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
-
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
-
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
-
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
-
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-</style>
+  <section aria-hidden="true" class="slide bg-surface">
+    <div class="container-w h-full flex items-center justify-center">
+      <div class="text-center text-textSecondary text-sm">
+        © {new Date().getFullYear()} {name}. All rights reserved.
+      </div>
+    </div>
+  </section>
+</HorizontalPager>
